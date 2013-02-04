@@ -17,7 +17,7 @@ while program_berjalan:
     pilih_menu = raw_input(awal)
     if pilih_menu == 'n':
         print "Masukkan nama file yang hendak dibuat beserta ekstensinya (.doc atau .txt)."
-        filename = raw_input("> ")
+        filename = raw_input(awal)
         target = open(filename, 'w')
         tulis = raw_input("Tulis di bawah: \n")
         target.write(tulis + "\n")
