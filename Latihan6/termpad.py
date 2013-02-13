@@ -1,5 +1,14 @@
+__author__ = "Khadis Thok"
+__copyright__ = "Copyright 2013, Python-UVT"
+__credist__ = ["Arif", "Rais", "Firdaus", "Samudera", "Dayat"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "Raviyanto"
+__email__ = "raviyanto@gmail.com"
+__status__ = "Development"
+
 print "\n"
-print ".:PYTHON FLAT TEXT CREATOR v.01:."
+print ".:PYTHON FLAT TEXT CREATOR v1.0.1:."
 print "\n"
 
 program_berjalan = True
