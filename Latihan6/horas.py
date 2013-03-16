@@ -20,16 +20,16 @@ class HorasBah:
         gtk.main_quit()
 
     def __init__(self):
-        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.window.connect("delete_event", self.hapus)
-        self.window.connect("destroy", self.keluar)
-        self.window.set_border_width(60)
-        self.button = gtk.Button("Horas UVT!")
-        self.button.connect("clicked", self.horas, None)
-        self.button.connect_object("clicked", gtk.Widget.destroy, self.window)
-        self.window.add(self.button)
-        self.button.show()
-        self.window.show()
+        self.jendela = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self.jendela.connect("delete_event", self.hapus)
+        self.jendela.connect("destroy", self.keluar)
+        self.jendela.set_border_width(60)
+        self.tombol = gtk.Button("Horas UVT!")
+        self.tombol.connect("clicked", self.horas, None)
+        self.tombol.connect_object("clicked", gtk.Widget.destroy, self.jendela)
+        self.jendela.add(self.tombol)
+        self.tombol.show()
+        self.jendela.show()
 
     def main(self):
         gtk.main()
