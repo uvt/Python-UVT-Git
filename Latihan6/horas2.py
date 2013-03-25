@@ -39,7 +39,6 @@ class HorasBah:
         print "Keluar Bah"
         gtk.main_quit()
    
-   
 if __name__ == "__main__":
     HorasBah()
     gtk.main()
