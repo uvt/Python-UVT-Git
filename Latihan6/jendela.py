@@ -7,7 +7,6 @@ pygtk.require("2.0")
 import gtk
 
 class Jendela():
-
     def __init__(self):
         self.jendela = gtk.Window(gtk.WINDOW_TOPLEVEL)
         self.jendela.set_title("Jendela")
