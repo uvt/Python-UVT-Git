@@ -7,7 +7,6 @@ pygtk.require('2.0')
 import gtk
 
 class HorasBah:
-
     def horas(self, uvt, data=None):
         print "Horas Bah"
 
