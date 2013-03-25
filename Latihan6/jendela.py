@@ -9,7 +9,6 @@ import gtk
 class Jendela():
 
     def __init__(self):
-
         self.jendela = gtk.Window(gtk.WINDOW_TOPLEVEL)
         self.jendela.set_title("Jendela")
         self.jendela.set_size_request(500, 300)        
