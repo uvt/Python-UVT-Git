@@ -173,7 +173,7 @@ class Kalkulator:
 
     def hitung(self, a, b):
         if b == "Hapus":
-      self.masukan_angka.set_text("")
+            self.masukan_angka.set_text("")
 	elif b == "Nol":
 	    self.masukan_angka.set_text("0")		
 	elif b == "+":
