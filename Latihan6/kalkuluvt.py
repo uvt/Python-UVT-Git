@@ -4,7 +4,7 @@
 # 
 # kalkuluvt.py
 #
-# Copyright 2013 Raviyanto Ahmad <raviyanto@gmail.com>
+# Copyright 2013 Universitas Virtual Terbuka
 
 try:
     import pygtk
