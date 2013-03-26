@@ -5,6 +5,12 @@
 # kalkuluvt.py
 #
 # Copyright 2013 Universitas Virtual Terbuka
+#
+# Referensi program:
+# 1. http://code.google.com/p/calculator-using-pygtk
+# 2. http://zetcode.com/gui/pygtk/layout/
+# 
+# Program ini buat pembelajaran di Universitas Virtual Terbuka
 
 try:
     import pygtk
