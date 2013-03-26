@@ -207,7 +207,13 @@ class Kalkulator:
 	    elif self.tanda == 3:
 	        hasil = jumlah1 * jumlah2
 	    elif self.tanda == 4:
-	        hasil = jumlah1 / jumlah2
+	    	if jumlah2 == 0.0:
+                    try:
+		        hasil = jumlah1 / jumlah2
+		    except:						
+			hasil = "Angka kedua 0"
+		else:
+	            hasil = jumlah1 / jumlah2
 	    elif self.tanda == 5:
 	        jumlah1 = int(jumlah1)
 		jumlah2 = int(jumlah2)	
