@@ -211,7 +211,7 @@ class Kalkulator:
                     try:
 		        hasil = jumlah1 / jumlah2
 		    except:						
-			hasil = "Maaf, Saudara angka kedua 0. Jadi, tidak ada hasil"
+			hasil = "Maaf, Saudara, angka kedua 0. Jadi, kalkulator ini bingung!"
 		else:
 	            hasil = jumlah1 / jumlah2
 	    elif self.tanda == 5:
