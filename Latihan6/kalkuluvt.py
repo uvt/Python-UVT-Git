@@ -121,6 +121,7 @@ class Kalkulator:
     
     def kotak(self):
         self.kotak_vertikal = gtk.VBox(spacing = 10)
+        
         self.kotak_horizontal_1 = gtk.HBox(spacing = 10)
         self.kotak_horizontal_1.pack_start(self.tetap)       
                 
@@ -138,8 +139,10 @@ class Kalkulator:
 
     def konek(self):
         self.tombol_ihwal.connect("clicked", self.ihwal)
+        
         self.tombol_close.connect("clicked", self.panggilan_keluar)
         self.jendela.connect("destroy", self.panggilan_keluar)
+        
         self.tombol_satu.connect("clicked", self.cetak_karakter, "1")    
         self.tombol_dua.connect("clicked", self.cetak_karakter, "2")
         self.tombol_tiga.connect("clicked", self.cetak_karakter, "3")
