@@ -1,10 +1,21 @@
 #!/usr/bin/env python
-
+#
 # -*- coding: utf-8 -*-
+# 
+# kalkuluvt.py
+#
+# Copyright 2013 Raviyanto Ahmad <raviyanto@gmail.com>
 
-import pygtk
-pygtk.require("2.0")
-import gtk
+try:
+    import pygtk
+    pygtk.require("2.0")
+except:
+    pass
+try:
+    import gtk
+except:
+    print("GTK Not Availible")
+    sys.exit(1)
 
 license = """Kalkulator UVT is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License(GPL v3) as published by
