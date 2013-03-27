@@ -49,8 +49,16 @@ class Kalkulator:
         self.jendela.set_position(gtk.WIN_POS_CENTER)
         self.jendela.set_border_width(20)
         self.jendela.set_title("Kalkulator UVT")
+        
+        try:
+            self.jendela.set_icon_from_file("python.png")
+        except Exception, e:
+            print e.message
+            sys.exit(1)
+            
         self.tombol()
-        self.fiks()
+        self.menu()
+        #self.fiks()
         self.tabel()
         self.masukan()
         self.kotak()
@@ -58,8 +66,8 @@ class Kalkulator:
         self.jendela.show_all()
 
     def tombol(self):
-        self.tombol_ihwal = gtk.Button("Ihwal")
-        self.tombol_ihwal.set_size_request(80, 30)
+        #self.tombol_ihwal = gtk.Button("Ihwal")
+        #self.tombol_ihwal.set_size_request(80, 30)
         
         self.tombol_clear = gtk.Button("Hapus")
         self.tombol_persen = gtk.Button("%")
@@ -86,9 +94,20 @@ class Kalkulator:
         self.tombol_sama_dengan = gtk.Button("=")
         self.tombol_tambah = gtk.Button("+")
 
-    def fiks(self):
-        self.tetap = gtk.Fixed()
-        self.tetap.put(self.tombol_ihwal, 275, 5)
+    def menu(self):
+        self.papan_menu = gtk.MenuBar()
+        self.pilihan = gtk.Menu()
+        self.berkas = gtk.MenuItem("Baca Keterangan Program")
+        self.berkas.set_submenu(self.pilihan)
+        self.tentang = gtk.MenuItem("Tentang Program")
+        self.keluar = gtk.MenuItem("Keluar Program")
+        self.pilihan.append(self.tentang)
+        self.pilihan.append(self.keluar)
+        self.papan_menu.append(self.berkas)
+
+    #def fiks(self):
+        #self.tetap = gtk.Fixed()
+        #self.tetap.put(self.tombol_ihwal, 275, 5)
         
     def masukan(self):
         self.masukan_angka = gtk.Entry()
@@ -125,8 +144,9 @@ class Kalkulator:
         self.kotak_vertikal = gtk.VBox(spacing = 10)
         
         self.kotak_horizontal_1 = gtk.HBox(spacing = 10)
-        self.kotak_horizontal_1.pack_start(self.tetap)       
-                
+        #self.kotak_horizontal_1.pack_start(self.tetap)       
+        self.kotak_horizontal_1.pack_start(self.papan_menu)
+        
         self.kotak_horizontal_2 = gtk.HBox(spacing = 10)
         self.kotak_horizontal_2.pack_start(self.masukan_angka)
 
@@ -140,7 +160,9 @@ class Kalkulator:
         self.jendela.add(self.kotak_vertikal)
 
     def konek(self):
-        self.tombol_ihwal.connect("clicked", self.ihwal)
+        #self.tombol_ihwal.connect("clicked", self.ihwal)
+        self.keluar.connect("activate", gtk.main_quit)
+        self.tentang.connect("activate", self.ihwal)
         
         self.tombol_close.connect("clicked", self.panggilan_keluar)
         self.jendela.connect("destroy", self.panggilan_keluar)
