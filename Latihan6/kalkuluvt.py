@@ -140,7 +140,7 @@ class Kalkulator:
 
     
     def kotak(self):
-        self.kotak_vertikal = gtk.VBox(spacing = 10)
+        self.kotak_vertikal = gtk.VBox(spacing = 20)
         
         self.kotak_horizontal_1 = gtk.HBox(spacing = 10)
         #self.kotak_horizontal_1.pack_start(self.tetap)       
