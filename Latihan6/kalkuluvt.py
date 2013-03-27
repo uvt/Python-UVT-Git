@@ -171,7 +171,7 @@ class Kalkulator:
         self.tentang.set_version("0.1")
         self.tentang.set_license(license)
         self.tentang.set_copyright("(c) 2013 UVT")
-        self.tentang.set_authors(["Raviyanto Ahmad"])
+        self.tentang.set_authors(["Raviyanto Ahmad"],["Rajeswari Seetharaman"], ["Jan Bodnar"])
         self.tentang.set_comments("Kalkulator Sederhana")
         self.tentang.set_website("http://www.csb.web.id")
         self.tentang.run()
