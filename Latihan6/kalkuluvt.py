@@ -19,7 +19,7 @@ try:
 except:
     pass
 try:
-    import gtk
+    import gtk, sys
 except:
     print("GTK Not Available")
     sys.exit(1)
