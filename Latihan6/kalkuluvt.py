@@ -231,7 +231,7 @@ class Kalkulator:
 		hasil = jumlah1 % jumlah2
 	    self.masukan_angka.set_text(str(hasil))
         
-    def panggilan_keluar(self, x):
+    def panggilan_keluar(self, a):
         gtk.main_quit()
 
 if __name__ == "__main__":
