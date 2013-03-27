@@ -20,7 +20,7 @@ except:
 try:
     import gtk
 except:
-    print("GTK Not Availible")
+    print("GTK Not Available")
     sys.exit(1)
 
 license = """Kalkulator UVT is free software; you can redistribute it and/or modify
