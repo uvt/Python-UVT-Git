@@ -8,7 +8,8 @@
 #
 # Referensi program:
 # 1. http://code.google.com/p/calculator-using-pygtk
-# 2. http://zetcode.com/gui/pygtk/layout/
+# 2. http://code.google.com/p/calculator-python-glade
+# 3. http://zetcode.com/gui/pygtk/layout
 # 
 # Program ini buat pembelajaran di Universitas Virtual Terbuka
 
