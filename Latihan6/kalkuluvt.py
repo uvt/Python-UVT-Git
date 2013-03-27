@@ -175,7 +175,7 @@ class Kalkulator:
         self.tentang.set_copyright("(c) 2013 UVT")
         self.tentang.set_authors(authors)
         self.tentang.set_comments("Kalkulator Sederhana")
-        self.tentang.set_website("http://www.csb.web.id")
+        self.tentang.set_website("http://universitas-virtual-terbuka.blogspot.com/")
         self.tentang.run()
         self.tentang.destroy()
     
