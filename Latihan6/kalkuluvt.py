@@ -54,8 +54,7 @@ class Kalkulator:
             self.jendela.set_icon_from_file("python.png")
         except Exception, e:
             print e.message
-            sys.exit(1)
-            
+                        
         self.tombol()
         self.menu()
         #self.fiks()
