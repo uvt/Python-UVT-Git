@@ -88,7 +88,7 @@ class Kalkulator:
 
     def fiks(self):
         self.tetap = gtk.Fixed()
-        self.tetap.put(self.tombol_ihwal, 5, 5)
+        self.tetap.put(self.tombol_ihwal, 275, 5)
         
     def masukan(self):
         self.masukan_angka = gtk.Entry()
