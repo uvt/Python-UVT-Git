@@ -43,7 +43,7 @@ authors = ["Raviyanto Ahmad", "Rajeswari Seetharaman", "Jan Bodnar"]
 class Kalkulator:
     def __init__(self):
         self.jendela = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.jendela.set_size_request(400, 300)
+        self.jendela.set_size_request(450, 300)
         self.jendela.modify_bg(gtk.STATE_NORMAL, gtk.gdk.Color("#7E2217"))
         self.jendela.set_resizable(True)
         self.jendela.set_position(gtk.WIN_POS_CENTER)
