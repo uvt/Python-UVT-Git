@@ -120,7 +120,8 @@ class Kalkulator:
 
     def masukan(self):
         self.masukan_data = gtk.Entry()
-    
+        self.x = self.masukan_data.get_text()
+
     def tabel(self):
         self.tabel_kalkulator = gtk.Table(rows = 9, columns = 4, homogeneous = True)
         self.tabel_kalkulator.attach(self.tombol_hapus, 0, 1, 0, 1)
@@ -186,35 +187,6 @@ class Kalkulator:
 
         self.jendela.add(self.kotak_vertikal)
 
-    def klik(self, a, b):
-      self.x = self.masukan_data.get_text()
-      if b == '=':
-         self.ifnr = False
-         x = 'self.x='+self.masukan_data.get_text()
-         exec(x)
-      elif b == 'CE':
-         self.masukan_data.set_text("")
-         self.ifnr = False
-         self.clr = True
-         self.x = None
-      else:
-         self.ifnr = True
-         self.clr = False
-      
-      
-      if self.ifnr:
-         if not self.x:
-            self.x = b
-         else:
-            self.x = self.x + b
-      
-      if not self.clr:
-         self.masukan_data.set_text(str(self.x))
-         self.x == None
-      if b == '=':
-         self.x = self.masukan_data.get_text()
-      lastchar = a
-
     def konek(self):
         self.keluar.connect("activate", gtk.main_quit)
         self.tentang.connect("activate", self.ihwal)
@@ -265,6 +237,33 @@ class Kalkulator:
         self.tombol_e.connect("clicked", self.klik,"e")
         self.tombol_log.connect("clicked", self.klik, "log(")
         self.tombol_log10.connect("clicked", self.klik, "log10(")
+
+    def klik(self, a, b):
+      if b == '=':
+         self.angka = False
+         x = 'self.x='+self.masukan_data.get_text()
+         exec(x)
+      elif b == 'CE':
+         self.masukan_data.set_text("")
+         self.angka = False
+         self.hapus = True
+         self.x = None
+      else:
+         self.angka = True
+         self.hapus = False
+            
+      if self.angka:
+         if not self.x:
+            self.x = b
+         else:
+            self.x = self.x + b
+      
+      if not self.hapus:
+         self.masukan_data.set_text(str(self.x))
+         self.x == None
+      if b == '=':
+         self.x = self.masukan_data.get_text()
+      karakter = a
 
     def ihwal(self, a):
         self.tentang = gtk.AboutDialog()
