@@ -240,24 +240,24 @@ class Kalkulator:
 
     def klik(self, a, b):
       if b == '=':
-         self.angka = False
+         self.tanda = False
          x = 'self.x='+self.masukan_data.get_text()
          exec(x)
       elif b == 'CE':
          self.masukan_data.set_text("")
-         self.angka = False
+         self.tanda = False
          self.hapus = True
          self.x = None
       else:
-         self.angka = True
+         self.tanda = True
          self.hapus = False
             
-      if self.angka:
-         if not self.x:
+      if self.tanda:
+        if not self.x:
             self.x = b
-         else:
+        else:
             self.x = self.x + b
-      
+                 
       if not self.hapus:
          self.masukan_data.set_text(str(self.x))
          self.x == None
