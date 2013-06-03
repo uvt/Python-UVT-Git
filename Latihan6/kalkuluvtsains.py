@@ -46,8 +46,8 @@ authors = ["Raviyanto Ahmad", "Rajeswari Seetharaman", "Jan Bodnar"]
 class Kalkulator:
     def __init__(self):
         self.jendela = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.jendela.set_size_request(250, 300)
-        self.jendela.modify_bg(gtk.STATE_NORMAL, gtk.gdk.Color("purple"))
+        self.jendela.set_size_request(250, 365)
+        self.jendela.modify_bg(gtk.STATE_NORMAL, gtk.gdk.Color("#8A0886"))
         self.jendela.set_resizable(True)
         self.jendela.set_position(gtk.WIN_POS_CENTER)
         self.jendela.set_border_width(5)
@@ -109,14 +109,30 @@ class Kalkulator:
 
     def menu(self):
         self.papan_menu = gtk.MenuBar()
+        
         self.pilihan = gtk.Menu()
-        self.berkas = gtk.MenuItem("Baca Keterangan Program")
-        self.berkas.set_submenu(self.pilihan)
-        self.tentang = gtk.MenuItem("Tentang Program")
-        self.keluar = gtk.MenuItem("Keluar Program")
-        self.pilihan.append(self.tentang)
+
+        self.tentang = gtk.Menu()
+
+        self.keluar = gtk.MenuItem("Keluar")
+        
         self.pilihan.append(self.keluar)
-        self.papan_menu.append(self.berkas)
+
+        self.keterangan = gtk.MenuItem("Keterangan")
+
+        self.tentang.append(self.keterangan)
+
+        self.pokok_pilihan = gtk.MenuItem("Berkas")
+
+        self.pokok_tentang = gtk.MenuItem("Ihwal")
+
+        self.pokok_pilihan.set_submenu(self.pilihan)
+
+        self.pokok_tentang.set_submenu(self.tentang)
+
+        self.papan_menu.append(self.pokok_pilihan)
+
+        self.papan_menu.append(self.pokok_tentang) 
 
     def masukan(self):
         self.masukan_data = gtk.Entry()
@@ -170,7 +186,7 @@ class Kalkulator:
         self.tabel_kalkulator.attach(self.tombol_tan, 3, 4, 8, 9)        
 
     def kotak(self):
-        self.kotak_vertikal = gtk.VBox(spacing = 10)
+        self.kotak_vertikal = gtk.VBox(spacing = 20)
         
         self.kotak_horizontal_1 = gtk.HBox(spacing = 10)
         self.kotak_horizontal_1.pack_start(self.papan_menu)
@@ -189,7 +205,7 @@ class Kalkulator:
 
     def konek(self):
         self.keluar.connect("activate", gtk.main_quit)
-        self.tentang.connect("activate", self.ihwal)
+        self.keterangan.connect("activate", self.ihwal)
         
         self.tombol_tutup.connect("clicked", self.panggilan_keluar)
         self.jendela.connect("destroy", self.panggilan_keluar)
@@ -257,13 +273,13 @@ class Kalkulator:
             self.x = b
         else:
             self.x = self.x + b
-                 
+                
       if not self.hapus:
          self.masukan_data.set_text(str(self.x))
          self.x == None
       if b == '=':
          self.x = self.masukan_data.get_text()
-      karakter = a
+      #karakter = a
 
     def ihwal(self, a):
         self.tentang = gtk.AboutDialog()
