@@ -255,32 +255,31 @@ class Kalkulator:
         self.tombol_log10.connect("clicked", self.klik, "log10(")
 
     def klik(self, a, b):
-      if b == '=':
-         self.tanda = False
-         x = 'self.x='+self.masukan_data.get_text()
-         exec(x)
-      elif b == 'CE':
-         self.masukan_data.set_text("")
-         self.tanda = False
-         self.hapus = True
-         self.x = None
-      else:
-         self.tanda = True
-         self.hapus = False
-            
-      if self.tanda:
-        if not self.x:
-            self.x = b
+        if b == '=':
+            self.tanda = False
+            x = 'self.x='+self.masukan_data.get_text()
+            exec(x)
+        elif b == 'CE':
+            self.masukan_data.set_text("")
+            self.tanda = False
+            self.hapus = True
+            self.x = None
         else:
-            self.x = self.x + b
+            self.tanda = True
+            self.hapus = False
+            
+        if self.tanda:
+            if not self.x:
+                self.x = b
+            else:
+                self.x = self.x + b
                 
-      if not self.hapus:
-         self.masukan_data.set_text(str(self.x))
-         self.x == None
-      if b == '=':
-         self.x = self.masukan_data.get_text()
-      #karakter = a
-
+        if not self.hapus:
+            self.masukan_data.set_text(str(self.x))
+            self.x == None
+        if b == '=':
+            self.x = self.masukan_data.get_text()
+      
     def ihwal(self, a):
         self.tentang = gtk.AboutDialog()
         self.tentang.set_program_name("Kalkulator UVT")
