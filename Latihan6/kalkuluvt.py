@@ -196,7 +196,7 @@ class Kalkulator:
         self.tentang.set_copyright("(c) 2013 UVT")
         self.tentang.set_authors(authors)
         self.tentang.set_comments("Kalkulator Sederhana")
-        self.tentang.set_website("http://universitas-virtual-terbuka.blogspot.com")
+        self.tentang.set_website("http://www.uvt.web.id")
         self.tentang.set_logo(gtk.gdk.pixbuf_new_from_file("python.png"))
         self.tentang.run()
         self.tentang.destroy()
